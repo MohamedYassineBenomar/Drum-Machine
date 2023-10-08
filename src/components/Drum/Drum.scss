@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #222831;
+
+    .drum {
+        position: relative;
+        grid-template-columns: auto auto auto;
+        display: flex;
+        width: 650px; /* Set the width */
+        height: 275px; /* Set the height */
+        background-color: #EEEEEE;
+        border: 5px solid #00ADB5;
+        border-radius: 5px;
+
+        .rings-panel {
+            flex: 1;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+            margin: auto 20px auto 20px;
+            .btns-rings {
+                height: 65px;
+                width: 100px;
+                border-radius: 5px;
+                font-size: large;
+                cursor: pointer;
+                &:active{
+                    background-color: white;
+                    color: white;
+                }
+                &:hover{
+                    background-color: #00ADB5;
+                    color: white;
+                }
+            }
+        }
+        
+        .settings-panel {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: center;
+            background-color: #00ADB5;
+            
+        }
+    }
+}
