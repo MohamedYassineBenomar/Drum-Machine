@@ -1,6 +1,7 @@
 import React from 'react'
 import './Drum.scss'
 import SoundSwitch from '../PowerSwitch/PowerSwitch';
+import BankSwitch from '../BankSwitch/BankSwitch';
 
 function Drum() {
   return (
@@ -44,7 +45,7 @@ function Drum() {
             <div className='bank-holder'>
               <span>
                 <strong>Bank</strong></span>
-              <SoundSwitch />
+              <BankSwitch />
             </div>
         </div>
       </div> 
