@@ -3,6 +3,7 @@ import './Drum.scss'
 import SoundSwitch from '../PowerSwitch/PowerSwitch';
 import BankSwitch from '../BankSwitch/BankSwitch';
 import LogsScreen from '../LogsScreen/LogsScreen';
+import Volumebar from '../Volumebar/Volumebar'
 
 function Drum() {
   return (
@@ -45,6 +46,9 @@ function Drum() {
             </div>
             <div className='logs-screen-holder'>
               <LogsScreen />
+            </div>
+            <div className='volume-bar-holder'>
+              <Volumebar />
             </div>
             <div className='bank-holder'>
               <span>
