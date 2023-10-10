@@ -11,9 +11,11 @@ function PowerSwitch() {
     if (computedStyle.getPropertyValue('visibility') === 'hidden') {
       switch1.style.visibility = 'visible';
       switch2.style.visibility = 'hidden';
+      document.querySelector("#root > div > div > div > div.settings-panel > div.logs-screen-holder > div > strong").textContent = "Power Off"
     } else {
       switch2.style.visibility = 'visible';
       switch1.style.visibility = 'hidden';
+      document.querySelector("#root > div > div > div > div.settings-panel > div.logs-screen-holder > div > strong").textContent = "Power On"
     }
   }
 

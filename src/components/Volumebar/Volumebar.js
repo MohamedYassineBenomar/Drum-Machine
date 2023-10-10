@@ -3,12 +3,15 @@ import './Volumebar.scss'
 
 
 function Volumebar() {
+ 
   return (
     <div className='Volumebar'>
         <div className="Volumeline">
-          <div className="Volumetick">
-          
-          </div>
+          <div
+            id="draggable"
+            className="Volumetick"
+            draggable="true"
+          ></div>
         </div>
     </div>
   )

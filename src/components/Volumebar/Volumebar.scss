@@ -8,12 +8,15 @@
     .Volumetick {
         position: absolute;
         top: -120%;
-        transform: translateY(-50%);
+       
         height: 10px;
         width: 20px;
         background-color: gray;
         transform: rotate(90deg);
         border: 2px solid black;
         border-radius: 10px;
+        cursor: pointer;
+        transition: left 0.3s;
     }
+  
 }
