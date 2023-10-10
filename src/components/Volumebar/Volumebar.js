@@ -4,15 +4,10 @@ import './Volumebar.scss'
 
 function Volumebar() {
   return (
-    <div>Volumebar
-        <div className="progress">
-          <div className="progress-bar progress-bar-info" 
-              role="progressbar" 
-              aria-valuenow="50"
-              aria-valuemin="0" 
-              aria-valuemax="100" 
-              style={{width: '50%'}}>
-              50% Complete (info)
+    <div className='Volumebar'>
+        <div className="Volumeline">
+          <div className="Volumetick">
+          
           </div>
         </div>
     </div>

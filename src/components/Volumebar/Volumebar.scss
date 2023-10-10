@@ -1,0 +1,19 @@
+.Volumeline{
+    position: relative;
+    height: 4px;
+    width: 200px;
+    background-color: blue;
+    border: 2px solid black;
+    border-radius: 4px;
+    .Volumetick {
+        position: absolute;
+        top: -100%;
+        transform: translateY(-50%);
+        height: 10px;
+        width: 20px;
+        background-color: gray;
+        transform: rotate(90deg);
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+}
