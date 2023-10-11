@@ -41,13 +41,14 @@ function Drum() {
         default:
           return; // Ignore keys other than a, z, e, q, s, d, w, x, c
       }
-  
+      
       if (btn) {
         btn.classList.add('btn-active'); // Add a CSS class that triggers the button's active state
         setTimeout(function() {
           btn.classList.remove('btn-active'); // Remove the CSS class after a short delay
         }, 100);
         btn.click();
+        
       }
     });
   }, []);
@@ -58,14 +59,16 @@ function Drum() {
   /*const addeventlisteners = () => {
 
   }*/
-  const handleplaysound = (event) => {
-    console.log(event.target.innerText)
+  const handleplaysound = () => {
+    document.getElementById('a_audio').play();
   }
   return (
     <div className='container'>
       <div className='drum'>
         <div className='rings-panel'>
-          
+        
+        <audio id="a_audio" src="ressources/Audio/Heater-1.mp3"></audio>
+       
           <button id='a_note' className='btns-rings' onClick={handleplaysound}>
             a
           </button>
