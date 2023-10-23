@@ -6,7 +6,7 @@ function Volumebar() {
   useEffect(() => {
     const volumeline = document.querySelector('.Volumeline');
     const draggables = document.querySelector('#draggable');
-
+    const logsscreen = document.querySelector('.drum-logs');
     if (draggables && volumeline) {
       volumeline.addEventListener('mousedown', (event) => {
         event.preventDefault(); // Prevents text selection while dragging
@@ -16,13 +16,17 @@ function Volumebar() {
           const boundingRect = volumeline.getBoundingClientRect();
         
           let newLeft = e.clientX - boundingRect.left-13;
-          console.log(e.clientX);
+    
           if (newLeft < 0) {
             newLeft = 0;
           } else if (newLeft > 176) {
             newLeft = 176;
           }
+          let totalWidth = 176; // Assuming 176 is your total width
+          let percentage = parseInt((newLeft / totalWidth) * 100);  
 
+          
+          logsscreen.textContent = "volume : "+percentage+"%";
           draggables.style.left = `${newLeft}px`;
         };
 
