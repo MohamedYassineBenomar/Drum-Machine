@@ -10,34 +10,53 @@ import { useEffect } from 'react';
 function Drum() {
   useEffect(() => {
     document.addEventListener('keydown', function(event) {
+      let audio;
       var btn;
       switch (event.key) {
         case 'a':
           btn = document.getElementById('a_note');
+          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3');
+          audio.play();
           break;
         case 'z':
           btn = document.getElementById('z_note');
+          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3');
+          audio.play();
           break;
         case 'e':
           btn = document.getElementById('e_note');
+          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3');
+          audio.play();
           break;
         case 'q':
           btn = document.getElementById('q_note');
+          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3');
+          audio.play();
           break;
         case 's':
           btn = document.getElementById('s_note');
+          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3');
+          audio.play();
           break;
         case 'd':
           btn = document.getElementById('d_note');
+          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3');
+          audio.play();
           break;
         case 'w':
           btn = document.getElementById('w_note');
+          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3');
+          audio.play();
           break;
         case 'x':
           btn = document.getElementById('x_note');
+          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3');
+          audio.play();
           break;
         case 'c':
           btn = document.getElementById('c_note');
+          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3');
+          audio.play(); 
           break;
         default:
           return; // Ignore keys other than a, z, e, q, s, d, w, x, c
