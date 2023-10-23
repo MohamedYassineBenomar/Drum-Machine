@@ -4,6 +4,7 @@ import SoundSwitch from '../PowerSwitch/PowerSwitch';
 import BankSwitch from '../BankSwitch/BankSwitch';
 import LogsScreen from '../LogsScreen/LogsScreen';
 import Volumebar from '../Volumebar/Volumebar'
+
 import { useEffect } from 'react';
 
 function Drum() {
@@ -61,7 +62,9 @@ function Drum() {
   }*/
   const handleplaysound = () => {
     document.getElementById('a_audio').play();
+   
   }
+  
   return (
     <div className='container'>
       <div className='drum'>
