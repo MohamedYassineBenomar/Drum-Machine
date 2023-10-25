@@ -4,59 +4,59 @@ import SoundSwitch from '../PowerSwitch/PowerSwitch';
 import BankSwitch from '../BankSwitch/BankSwitch';
 import LogsScreen from '../LogsScreen/LogsScreen';
 import Volumebar from '../Volumebar/Volumebar'
-
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useLayoutEffect, useCallback } from 'react';
 
 function Drum() {
-  useEffect(() => {
+  const volume = useSelector((state) => state.rootreducer.volume);
+  const power = useSelector((state) => state.rootreducer.power);
+
+  const playAudio = useCallback((src) => {
+    const audio = new Audio(src);
+    audio.play();
+  }, [power]);
+ 
+  useLayoutEffect(() => {
+
     document.addEventListener('keydown', function(event) {
-      let audio;
+      
       var btn;
       switch (event.key) {
         case 'a':
           btn = document.getElementById('a_note');
-          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3');
-          audio.play();
+          playAudio('https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3');
           break;
         case 'z':
           btn = document.getElementById('z_note');
-          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3');
-          audio.play();
+          playAudio('https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3');
           break;
         case 'e':
           btn = document.getElementById('e_note');
-          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3');
-          audio.play();
+          playAudio('https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3');
           break;
         case 'q':
           btn = document.getElementById('q_note');
-          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3');
-          audio.play();
+          playAudio('https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3');
           break;
         case 's':
           btn = document.getElementById('s_note');
-          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3');
-          audio.play();
+          playAudio('https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3');
           break;
         case 'd':
           btn = document.getElementById('d_note');
-          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3');
-          audio.play();
+          playAudio('https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3');
           break;
         case 'w':
           btn = document.getElementById('w_note');
-          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3');
-          audio.play();
+          playAudio('https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3');
           break;
         case 'x':
           btn = document.getElementById('x_note');
-          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3');
-          audio.play();
+          playAudio('https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3');
           break;
         case 'c':
           btn = document.getElementById('c_note');
-          audio = new Audio('https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3');
-          audio.play(); 
+          playAudio('https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3');
           break;
         default:
           return; // Ignore keys other than a, z, e, q, s, d, w, x, c
@@ -70,8 +70,9 @@ function Drum() {
         btn.click();
         
       }
+     
     });
-  }, []);
+  }, [power, volume,playAudio]);
   
 
  
@@ -88,9 +89,6 @@ function Drum() {
     <div className='container'>
       <div className='drum'>
         <div className='rings-panel'>
-        
-        <audio id="a_audio" src="ressources/Audio/Heater-1.mp3"></audio>
-       
           <button id='a_note' className='btns-rings' onClick={handleplaysound}>
             a
           </button>

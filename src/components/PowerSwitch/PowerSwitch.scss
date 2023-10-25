@@ -5,13 +5,16 @@
     background-color: black;
     padding: 3px;
     margin: auto;
+   
     .switche1 {
         flex: 1;
         background-color: blue;
         visibility: hidden;
+    
     }
     .switche2 {
         flex: 1;
         background-color: blue;
+
     }
 }

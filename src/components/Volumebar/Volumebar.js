@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react'
 import './Volumebar.scss'
-
+//import { volumeChange } from '../../reducers/drum-reduer';
+import { useDispatch } from 'react-redux';
 
 function Volumebar() {
+
+  const dispatch = useDispatch();
+  
   useEffect(() => {
+    
     const volumeline = document.querySelector('.Volumeline');
     const draggables = document.querySelector('#draggable');
     const logsscreen = document.querySelector('.drum-logs');
     if (draggables && volumeline) {
       volumeline.addEventListener('mousedown', (event) => {
         event.preventDefault(); // Prevents text selection while dragging
-        console.log("drag start");
+       
 
         const handleDrag = (e) => {
           const boundingRect = volumeline.getBoundingClientRect();
@@ -23,8 +28,10 @@ function Volumebar() {
             newLeft = 176;
           }
           let totalWidth = 176; // Assuming 176 is your total width
-          let percentage = parseInt((newLeft / totalWidth) * 100);  
-
+          let percentage = parseInt((newLeft / totalWidth) * 100);
+          
+       
+         // dispatch(volumeChange(percentage));
           
           logsscreen.textContent = "volume : "+percentage+"%";
           draggables.style.left = `${newLeft}px`;
@@ -39,7 +46,8 @@ function Volumebar() {
         document.addEventListener('mouseup', handleEndDrag);
       });
     }
-  }, []);
+  }, [dispatch]);
+
 
   return (
     <div className='Volumebar'>

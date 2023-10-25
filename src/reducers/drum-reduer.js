@@ -9,13 +9,13 @@ const drumreducer = createSlice({
     },
     reducers:{
         volumeChange:(state,action) =>{
-
+            state.volume = action.payload;
         },
         drumTrig:(state,action) =>{
             
         },
-        turnOnOff:(state,action) =>{
-            
+        turnOnOff:(state) =>{
+            state.power = !state.power;
         }
     }
 });
