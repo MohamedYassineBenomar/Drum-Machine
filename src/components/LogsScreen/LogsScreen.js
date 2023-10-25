@@ -5,7 +5,7 @@ import './LogsScreen.scss'
 function LogsScreen() {
   return (
     <div className='logs-screen'>
-        <strong className='drum-logs'>LogsScreen</strong>
+        <strong className='drum-logs'>Power On</strong>
     </div>
   )
 }
