@@ -13,8 +13,8 @@
         position: relative;
         grid-template-columns: auto auto auto;
         display: flex;
-        width: 650px; /* Set the width */
-        height: 275px; /* Set the height */
+
+        padding: 20px;
         background-color: #EEEEEE;
         border: 5px solid #00ADB5;
         border-radius: 5px;
@@ -50,7 +50,14 @@
             flex: 1;
             align-items: center;
             background-color: #EEEEEE;
-            
+            @media screen and (max-width: 600px) {
+                margin-top: 10px;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            display: block; /* Override display flex */
+            width: auto; /* Adjust width as needed */
         }
     }
 }
